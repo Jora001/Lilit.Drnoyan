@@ -13,7 +13,7 @@ const AboutSection = () => {
       icon: Code2,
       label: "Continuous Self-Development",
       description:
-        "Continuously improving design skills through learning, hands-on practice, and real-world projects.",
+        "Continuously improving development skills through learning, hands-on practice, and real-world projects.",
     },
     {
       icon: Cpu,
@@ -51,7 +51,7 @@ const AboutSection = () => {
           className="text-center mb-20"
         >
           <span className="inline-flex items-center gap-2 code-block mb-4 opacity-80">
-            <Sparkles size={16} /> {" Amalya Karapetyan"}
+            <Sparkles size={16} /> {" Lilit Drnoyan"}
           </span>
           <h2 className="text-4xl lg:text-5xl font-display font-bold">
             About <span className="gradient-text">Me</span>
@@ -79,7 +79,7 @@ const AboutSection = () => {
                 transition={{ duration: 6, repeat: Infinity, ease: easeInOut }}
               >
                 <img
-                  src="/assets/aboutfoto.jpg"
+                  src="/assets/ldr.jpg"
                   alt="Amalya Karapetyan"
                   className="w-full h-full object-cover"
                 />
@@ -99,10 +99,9 @@ const AboutSection = () => {
                 className="absolute -bottom-6 -right-6 glass-card px-6 py-4 rounded-xl text-center"
               >
                 <div className="text-3xl font-display font-bold gradient-text">
-                  UI/UX
-                </div>
+Full-Stack                </div>
                 <div className="text-sm text-muted-foreground">
-                  Designer
+                  Developer
                 </div>
               </motion.div>
             </div>
@@ -115,10 +114,14 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: easeInOut }}
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-I am Amalya, a UX/UI and graphic designer focused on creating clear, user-friendly digital experiences. I enjoy transforming ideas into structured, functional, and visually refined solutions by combining user experience with strong visual identity and thoughtful visual communication.            </p>
+I am Lilit, a Full-Stack Developer dedicated to crafting efficient, scalable, and intuitive web applications.
+I specialize in bridging front-end and back-end development to build seamless, user-focused digital experiences.
+ </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-I actively develop my professional skills, follow modern design practices, and collaborate effectively with teams to deliver consistent, intuitive, and high-quality design outcomes that support both user needs and business goals.            </p>
+I enjoy solving complex problems, writing clean and maintainable code, and working with modern technologies to deliver reliable solutions.
+I continuously develop my skills and strive to create applications that combine performance, usability, and long-term value for both users and businesses.
+  </p>
 
             {/* 🌟 HIGHLIGHTS */}
             <div className="grid sm:grid-cols-2 gap-6">
