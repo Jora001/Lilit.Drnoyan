@@ -17,32 +17,18 @@ const containerVariants: Variants = {
 };
 
 const cardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 70,
-    scale: 0.93,
-  },
+  hidden: { opacity: 0, y: 70, scale: 0.93 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: {
-      duration: 1,
-      ease: [0.16, 1, 0.3, 1],
-    },
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, x: -18 },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.45,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  },
+  show: { opacity: 1, x: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
 };
 
 /* ================= SECTION ================= */
@@ -53,43 +39,33 @@ const SkillsSection = () => {
 
   const skills = [
     {
-      title: "Skills & Tools",
-      items: [
-        "UI Design",
-        "Wireframing",
-        "Prototyping",
-        "Figma",
-        "User Flow Mapping",
-        "Branding",
-        "Logo Design",
-        "Adobe Photoshop",
-        "Adobe Illustrator",
-        "Jira / Trello",
-      ],
+      title: "Front-End",
+      items: ["HTML5", "JavaScript  (ES6+)","TypeScript", "React.js","Next.js", "RESTful APIs, Axios, Fetch", "Vite"],
     },
     {
+      title: "Styling",
+      items: ["CSS3", "SCSS", "SASS", "Bootstrap", "Tailwind", "Figma"],
+    },
+    {
+      title: "Back-End",
+      items: ["Node.js", "Express.js","Passport.js","JWT","(OAuth, Helmet)","RESTful APIs",],
+    },
+    {
+      title: "Database & ORM",
+      items: ["PostgreSQL", "Prisma"," MySQL", "Sequelize"],
+    },
+    {
+      title: "Tools & Deployment",
+      items: ["Git / GitHub", "Linux / Shell","Jira / Trello", "Vercel", "Postman", "Render"],
+    },
+     {
       title: "Soft Skills",
-      items: [
-        "User-Centered Thinking",
-        "Problem Solving & Design Thinking",
-        "Clear Communication & Presentation Skills",
-        "Collaboration & Teamwork",
-        "Time Management & Prioritization",
-        "Adaptability & Continuous Learning",
-        "Feedback Acceptance & Iteration",
-        "Empathy & User Understanding",
-        "Critical Thinking & Analytical Skills",
-        "Networking & Community Engagement",
-      ],
+      items: ["Problem Solving", "Time Management","Communication", "Research & Learning", "Conflict Resolution", "Teamworking" ],
     },
   ];
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="relative py-44 overflow-hidden"
-    >
+    <section id="skills" ref={ref} className="relative py-44 overflow-hidden">
       {/* ===== GLOBAL LIGHT ORBS ===== */}
       <motion.div className="absolute inset-0 pointer-events-none">
         <motion.div
@@ -112,11 +88,9 @@ const SkillsSection = () => {
           transition={{ duration: 1 }}
           className="text-center mb-32"
         >
-          <span className="code-block mb-5 inline-block">
-            {"// Skills"}
-          </span>
+          <span className="code-block mb-5 inline-block">{"// Technical Skills"}</span>
           <h2 className="text-4xl lg:text-5xl font-display font-bold">
-            Areas of <span className="gradient-text">Focus</span>
+            Areas of <span className="gradient-text">Expertise</span>
           </h2>
         </motion.div>
 
@@ -125,14 +99,10 @@ const SkillsSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto"
         >
           {skills.map((block) => (
-            <LightCard
-              key={block.title}
-              title={block.title}
-              items={block.items}
-            />
+            <LightCard key={block.title} title={block.title} items={block.items} />
           ))}
         </motion.div>
       </div>
@@ -144,13 +114,7 @@ export default SkillsSection;
 
 /* ================= LIGHT CARD ================= */
 
-const LightCard = ({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) => {
+const LightCard = ({ title, items }: { title: string; items: string[] }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -172,7 +136,7 @@ const LightCard = ({
       }}
       whileHover={{ y: -16, scale: 1.05 }}
       transition={{ duration: 0.45 }}
-      className="relative overflow-hidden rounded-3xl glass-card p-12 min-h-[460px]"
+      className="relative overflow-hidden rounded-3xl glass-card p-10 min-h-[380px]"
     >
       {/* ===== MOUSE LIGHT ===== */}
       <motion.div
@@ -194,17 +158,17 @@ const LightCard = ({
         className="absolute inset-0 rounded-3xl border border-white/15"
       />
 
-      <h3 className="relative z-10 text-2xl font-display font-semibold mb-12 text-primary">
+      <h3 className="relative z-10 text-2xl font-display font-semibold mb-8 text-primary">
         {title}
       </h3>
 
-      <ul className="relative z-10 space-y-6">
+      <ul className="relative z-10 space-y-4">
         {items.map((item) => (
           <motion.li
             key={item}
             variants={itemVariants}
             whileHover={{ x: 8 }}
-            className="flex items-start gap-4 text-muted-foreground leading-relaxed"
+            className="flex items-start gap-3 text-muted-foreground leading-relaxed"
           >
             <span className="mt-2 w-2 h-2 rounded-full bg-primary flex-shrink-0" />
             {item}

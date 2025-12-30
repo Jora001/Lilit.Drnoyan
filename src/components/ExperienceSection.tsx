@@ -26,31 +26,23 @@ const CoursesSection = () => {
   const courses = [
     {
       id: 1,
-      title: "Codritive",
-      organization: "UX/UI Designer",
-      period: "Aug 2025 – Present",
+      title: "WebNova Technologies",
+      organization: "Full-Stack Developer",
+      period: "2023 – 2024",
       logo: "/assets/codritive.jpg",
       description:
-        "Joined the Codritive team as a UX/UI Designer, actively contributing to user-centered digital products. Collaborate with cross-functional teams to create intuitive, functional, and visually engaging interfaces aligned with business goals. ",
+        "Developed responsive web applications using React.js and Node.js. Integrated Prisma ORM with MySQL, SQL, and MongoDB to streamline database operations. Implemented secure authentication and authorization using JWT and bcrypt.js. Built multi-page applications with React Router and deployed projects on Vercel and Render.",
     },
     {
       id: 2,
-      title: "Promark",
-      organization: "Graphic Designer",
-      period: "Dec 2024 – Aug 2025",
+      title: "Morpho Academy Hybrid",
+      organization: "Full-Stack Developer (Internship)",
+      period: "2023 – 2023",
       logo: "/assets/PrpMark.jpg",
       description:
         "Worked as a Graphic Designer at ProMark, creating visually compelling marketing and branding materials. Collaborated with the team to develop consistent visual identities, deliver creative design solutions, and support promotional campaigns across digital and print platforms ",
     },
-     {
-      id: 3,
-      title: "Business Development Group",
-      organization: "Customer Support Specialist",
-      period: "Jul 2023 – Oct 2024",
-      logo: "/assets/bbdg.jpg",
-      description:
-        "Worked as a Customer Support Specialist, providing effective communication with clients, resolving inquiries, and ensuring a high level of customer satisfaction. Collaborated with internal teams to address user needs, improve service processes, and support overall business operations.",
-    },
+     
       ];
 
   return (
@@ -82,7 +74,7 @@ const CoursesSection = () => {
           className="text-center mb-28"
         >
           <span className="code-block mb-5 inline-block">
-            {"// Amalya Karapetyan"}
+            {"// Lilit Drnoyan"}
           </span>
           <h2 className="text-4xl lg:text-5xl font-display font-bold">
             Work <span className="gradient-text">Experience</span>
