@@ -1,263 +1,168 @@
-import { useMemo } from "react";
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  cubicBezier,
-} from "framer-motion";
-import { ArrowDown, Linkedin, FileText } from "lucide-react";
-import { FaBehance } from "react-icons/fa";
-
-/* ───────── EASING ───────── */
-const easeInOut = cubicBezier(0.4, 0, 0.2, 1);
-
-/* ───────── FLOATING TAG ───────── */
-const premiumTag = (duration = 5, delay = 0) => ({
-  animate: {
-    y: [0, -16, 0],
-    boxShadow: [
-      "0 0 18px rgba(255,255,255,0.25)",
-      "0 0 36px rgba(255,255,255,0.55)",
-      "0 0 18px rgba(255,255,255,0.25)",
-    ],
-    transition: {
-      duration,
-      repeat: Infinity,
-      delay,
-      ease: easeInOut,
-    },
-  },
-});
+import { motion } from "framer-motion";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 const HeroSection = () => {
-  /* ───────── 3D TILT ───────── */
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const rotateX = useTransform(y, [-120, 120], [12, -12]);
-  const rotateY = useTransform(x, [-120, 120], [-12, 12]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    x.set(e.clientX - rect.left - rect.width / 2);
-    y.set(e.clientY - rect.top - rect.height / 2);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
-  /* ───────── PARTICLES ───────── */
-  const particles = useMemo(
-    () =>
-      Array.from({ length: 14 }).map(() => ({
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        size: 2 + Math.random() * 3,
-        duration: 6 + Math.random() * 5,
-        delay: Math.random() * 2,
-        opacity: 0.15 + Math.random() * 0.35,
-      })),
-    []
-  );
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* BACKGROUND */}
-      <motion.div
-        className="absolute inset-0 opacity-35"
-        animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-        transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+    <section
+      className="
+        relative
+        min-h-screen
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+        px-4
+        pt-28
+        lg:pt-32
+      "
+    >
+      {/* Background grid */}
+      <div
+        className="absolute inset-0 opacity-20"
         style={{
-          background:
-            "radial-gradient(circle at 20% 20%, #8b5cf6, transparent 45%), radial-gradient(circle at 80% 80%, #22d3ee, transparent 45%), radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 60%)",
-          backgroundSize: "200% 200%",
+          backgroundImage:
+            "linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
       />
 
-      {/* PARTICLES */}
-      {particles.map((p, i) => (
-        <motion.span
-          key={i}
-          className="absolute rounded-full bg-white"
-          style={{
-            top: p.top,
-            left: p.left,
-            width: p.size,
-            height: p.size,
-            opacity: p.opacity,
-          }}
-          animate={{ y: [0, -34, 0] }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: easeInOut,
-          }}
-        />
-      ))}
+      {/* Glowing blobs */}
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
 
-      <div className="section-container relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 px-4 lg:px-0">
-          {/* TEXT */}
+      <div className="section-container relative z-10 w-full max-w-7xl">
+        <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-24">
+
+          {/* LEFT */}
           <motion.div
             className="flex-1 text-center lg:text-left"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: easeInOut }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.span
-              className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full glass-card font-mono text-sm"
-              {...premiumTag(4, 0)}
-            >
-              🎨 UI / UX Designer
-            </motion.span>
+            <span className="code-block inline-block mb-4 text-sm">
+              {"// Welcome"}
+            </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold mb-6">
-              I&apos;m{" "}
-              <span className="gradient-text animate-gradient">Amalya</span>
+              I&apos;m <span className="gradient-text">Lilit</span>
             </h1>
 
-            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-6">
-              UI / UX &amp; Graphic Designer crafting meaningful visual experiences
+            <p className="text-lg sm:text-xl lg:text-3xl text-muted-foreground font-display mb-6">
+              Full-Stack Developer
             </p>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-md sm:max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-              Welcome to my portfolio. Explore my UI/UX and graphic design projects, as well as my professional approach to design. I am open to effective collaboration and long-term professional partnerships.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+              Welcome to my portfolio.
+              <br />
+              I build modern, scalable, and user-focused web applications.
+              <br />
+              Always open to collaboration and meaningful opportunities.
             </p>
 
-            {/* SOCIALS */}
-            <div className="flex justify-center lg:justify-start gap-4 mt-6">
-              <motion.a
-                whileHover={{ scale: 1.15 }}
-                href="https://www.behance.net/amalyakarapet3"
-                target="_blank"
-                className="p-3 rounded-full bg-[#1769ff]/20 text-[#1769ff] shadow-[0_0_25px_rgba(23,105,255,0.45)]"
-              >
-                <FaBehance className="w-5 h-5" />
-              </motion.a>
-
-              <motion.a
-                whileHover={{ scale: 1.15 }}
-                href="https://www.linkedin.com/in/amalya-karapetyan-b01050284/"
-                target="_blank"
-                className="p-3 rounded-full bg-[#0a66c2]/20 text-[#0a66c2] shadow-[0_0_25px_rgba(10,102,194,0.45)]"
-              >
-                <Linkedin className="w-5 h-5" />
-              </motion.a>
-
-              {/* CV DOWNLOAD */}
-              <motion.a
-                whileHover={{ scale: 1.15 }}
-                href="/AmalyaKarapetyanCV(3).pdf"
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a
+                href="/LilitDrnoyan(2).pdf"
                 download
-                className="p-3 rounded-full bg-primary/20 text-primary shadow-[0_0_25px_hsl(var(--primary)/0.45)]"
+                className="px-7 py-3 rounded-lg font-display font-semibold text-primary-foreground transition-all hover:scale-105 glow-effect"
+                style={{ background: "var(--gradient-primary)" }}
               >
-                <FileText className="w-5 h-5" />
-              </motion.a>
+                Download CV
+              </a>
+
+              <a
+                href="#contact"
+                className="px-7 py-3 rounded-lg font-display font-semibold border border-border bg-secondary/50 hover:bg-secondary transition-all hover:scale-105"
+              >
+                Let&apos;s Connect
+              </a>
+            </div>
+
+            {/* Socials */}
+            <div className="flex items-center justify-center lg:justify-start gap-6 mt-8">
+              <a href="https://github.com/LIL19-IT" target="_blank" rel="noreferrer">
+                <Github className="w-6 h-6 hover:text-primary transition" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/lilit-drnoyan-272a722b0/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="w-6 h-6 hover:text-primary transition" />
+              </a>
+              <a href="mailto:lilitdrnoyan30@gmail.com">
+                <Mail className="w-6 h-6 hover:text-primary transition" />
+              </a>
             </div>
           </motion.div>
 
-          {/* AVATAR */}
+          {/* RIGHT – INTERACTIVE DEV SHOWCASE */}
           <motion.div
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-            className="relative w-64 sm:w-80 lg:w-[460px] h-64 sm:h-80 lg:h-[460px]"
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, ease: easeInOut }}
+            className="flex-1 w-full flex items-center justify-center"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative w-full h-full">
-              {/* IMAGE WITH ANIMATION */}
+            <div className="relative w-full max-w-md lg:max-w-lg">
+
+              {/* Code card */}
+              <div className="glass-card p-6 rounded-2xl font-mono text-sm sm:text-base leading-relaxed shadow-xl">
+                <p>
+                  <span className="text-primary">const</span>{" "}
+                  <span className="text-accent">developer</span> = {"{"}
+                </p>
+                <p className="pl-4">
+                  name: <span className="text-primary">"Lilit Drnoyan"</span>,
+                </p>
+                <p className="pl-4">
+                  role: <span className="text-primary">"Full-Stack Developer"</span>,
+                </p>
+                <p className="pl-4">
+                  stack: [
+                  <span className="text-primary">"React"</span>,{" "}
+                  <span className="text-primary">"Node.js"</span>,{" "}
+                  <span className="text-primary">"TypeScript"</span>,{" "}
+                  <span className="text-primary">"MySQL"</span>
+                  ],
+                </p>
+                <p className="pl-4">
+                  focus: <span className="text-primary">"Clean UI & Scalable APIs"</span>
+                </p>
+                <p>{"};"}</p>
+              </div>
+
+              {/* Floating badges */}
               <motion.div
-                className="absolute inset-0 rounded-full overflow-hidden border border-white/20 shadow-2xl"
-                animate={{ y: [0, -8, 0], scale: [1, 1.03, 1] }}
-                transition={{ duration: 6, repeat: Infinity, ease: easeInOut }}
+                className="absolute -top-6 -left-6 glass-card px-4 py-2 rounded-lg text-sm font-semibold"
+                animate={{ y: [0, -12, 0] }}
+                transition={{ repeat: Infinity, duration: 4 }}
               >
-                <img
-                  src="/assets/profile-photo.jpg"
-                  alt="Amalya"
-                  className="w-full h-full object-cover"
-                  draggable={false}
-                />
-
-                {/* LIGHT SWEEP */}
-                <motion.div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)",
-                    mixBlendMode: "overlay",
-                  }}
-                  animate={{ x: ["-120%", "120%"] }}
-                  transition={{
-                    duration: 3.5,
-                    repeat: Infinity,
-                    repeatDelay: 2,
-                    ease: easeInOut,
-                  }}
-                />
-
-                {/* VIGNETTE */}
-                <div className="absolute inset-0 shadow-[inset_0_0_90px_rgba(0,0,0,0.35)]" />
-              </motion.div>
-
-              {/* FLOATING TAGS */}
-              <motion.div
-                className="absolute right-0 sm:right-4 top-16 px-6 py-2 rounded-xl text-sm font-semibold text-white backdrop-blur-md"
-                {...premiumTag(5, 0)}
-                style={{
-                  background:
-                    "linear-gradient(135deg,#6366f1,#22d3ee,#6366f1)",
-                  backgroundSize: "200% 200%",
-                  border: "1px solid rgba(255,255,255,0.3)",
-                  transform: "translateZ(36px)",
-                }}
-              >
-                Figma
+                ⚛️ React
               </motion.div>
 
               <motion.div
-                className="absolute left-0 sm:left-4 bottom-28 px-6 py-2 rounded-xl text-sm font-semibold text-white backdrop-blur-md"
-                {...premiumTag(6, 0.3)}
-                style={{
-                  background:
-                    "linear-gradient(135deg,#ec4899,#fb7185,#ec4899)",
-                  backgroundSize: "200% 200%",
-                  border: "1px solid rgba(255,255,255,0.3)",
-                  transform: "translateZ(36px)",
-                }}
+                className="absolute -bottom-6 right-6 glass-card px-4 py-2 rounded-lg text-sm font-semibold"
+                animate={{ y: [0, 12, 0] }}
+                transition={{ repeat: Infinity, duration: 5 }}
               >
-                UX Flow
+                🚀 Node.js
               </motion.div>
 
               <motion.div
-                className="absolute left-1/2 -translate-x-1/2 -bottom-12 px-7 py-2 rounded-xl text-sm font-semibold text-white backdrop-blur-md"
-                {...premiumTag(5.5, 0.6)}
-                style={{
-                  background:
-                    "linear-gradient(135deg,#22c55e,#84cc16,#22c55e)",
-                  backgroundSize: "200% 200%",
-                  border: "1px solid rgba(255,255,255,0.3)",
-                  transform: "translateZ(36px)",
-                }}
+                className="absolute top-1/2 -right-8 glass-card px-4 py-2 rounded-lg text-sm font-semibold"
+                animate={{ x: [0, 12, 0] }}
+                transition={{ repeat: Infinity, duration: 6 }}
               >
-                Visual Identity
+                💾 SQL
               </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* SCROLL */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: easeInOut }}
-        >
-          <ArrowDown className="w-6 h-6 text-muted-foreground" />
-        </motion.div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground">
+          <ArrowDown className="w-5 h-5 animate-bounce" />
+        </div>
       </div>
     </section>
   );
