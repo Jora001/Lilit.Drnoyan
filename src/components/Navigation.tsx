@@ -58,7 +58,7 @@ const Navigation = () => {
           </div>
 
           <a
-            href="https://www.linkedin.com/in/amalya-karapetyan-b01050284/"
+            href="https://www.linkedin.com/in/lilit-drnoyan-272a722b0/"
             className="hidden lg:flex px-6 py-2 rounded-lg font-display font-semibold text-sm text-primary-foreground transition-all duration-300 hover:scale-105"
             style={{ background: "var(--gradient-primary)" }}
           >

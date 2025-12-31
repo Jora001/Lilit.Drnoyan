@@ -42,7 +42,7 @@ const EducationSection = () => {
       period: "2025",
       description:
         "Participated in the intensive 42 Piscine program, working on both individual and team-based projects in a highly competitive, self-directed learning environment. Developed strong problem-solving skills, algorithmic thinking, and the ability to collaborate effectively under time pressure.",
-      image: "/assets/42s.jpg",
+      image: "/assets/qe.jpg",
       achievements: ["C Programming Language", "Algorithms", "Teamwork"],
     },
     {
