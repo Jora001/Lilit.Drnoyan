@@ -8,6 +8,7 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  Github,
 } from "lucide-react";
 
 /* ================= TYPES ================= */
@@ -20,6 +21,7 @@ type Project = {
   cover: string;
   images: string[];
   tags: string[];
+  github: string;
 };
 
 /* ================= MAIN SECTION ================= */
@@ -34,168 +36,61 @@ const ProjectsSection = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "FlexPay – Payment App",
-      shortDescription: "UX/UI Design Case Study",
+      title: "Corporate Website for Feed Manufacturing Company",
+      shortDescription: "Full-Stack development",
       fullDescription:
-        "FlexPay is a mobile financial app designed to simplify everyday payment experiences by combining intuitive usability with clean, modern visual design.\n\nIn this project, I focused on creating a user-centered interface that enables users to quickly and confidently manage their finances — from sending money and tracking transactions to reviewing payment history. Starting with UX research and user flow mapping, I identified key pain points users face in existing payment apps, such as unclear navigation, cluttered interfaces, and lack of visual clarity in transaction feedback.\n\nUsing these insights, I crafted clear user flows, low- and high-fidelity wireframes, and a polished UI. Emphasis was placed on smooth interactions, consistent visual language, and readability of financial data. The result is a cohesive design system with thoughtfully structured screens that guide users through essential tasks with minimal effort.",
+        "Developed a modern corporate website for a feed manufacturing company specializing in aquaculture, farm animals, and pets. The project focuses on clear content structure, professional visual presentation, and user-friendly navigation to showcase the company’s products, news, and business activities.",
       cover: "/assets/apr.jpg",
-      images: [
-        "/assets/apr.jpg",
-        "/assets/s1.jpg",
-        "/assets/s2.jpg",
-        "/assets/s3.jpg",
-        "/assets/s4.jpg",
-        "/assets/ap2.jpg",
-        "/assets/ap3.jpg",
-        "/assets/a4.jpg",
-      ],
-      tags: [
-        "UX Research",
-        "User Flow",
-        "Wireframing",
-        "Prototyping",
-        "UI Design",
-      ],
+      images: ["/assets/apr.jpg", "/assets/ap5.jpg"],
+      tags: ["Full-Stack", "Frontend", "Backend", "Research", "Teamwork"],
+      github: "https://github.com/LIL19-IT",
     },
     {
       id: 2,
-      title: "LUXOR | Branding",
-      shortDescription: "Brand Identity Design",
+      title: "Website for Beauty & Salon Equipment",
+      shortDescription: "Full-Stack development",
       fullDescription:
-        "LUXOR is a branding project focused on creating a strong, modern, and recognizable brand identity through a cohesive visual system. The goal of the project was to develop a brand that feels confident, elegant, and timeless while remaining adaptable across different platforms and use cases. \n\n The design process involved shaping the brand’s visual language from the ground up, including logo design, color palette, typography, and graphic elements. Special attention was given to consistency and balance, ensuring that every component works together to communicate the brand’s personality clearly and effectively.\n\nThis project demonstrates a strategic approach to branding, where visual aesthetics are aligned with brand values and market positioning. The resulting identity is flexible and scalable, suitable for both digital and physical applications such as marketing materials, packaging, and brand collateral.  \n\n LUXOR highlights skills in brand thinking, visual identity systems, and creating meaningful, memorable brand experiences.",
-      cover: "/assets/erk1.jpg",
-      images: [
-        "/assets/Lux1.jpg",
-        "/assets/Lux2.jpg",
-                "/assets/Lux3.jpg",
-        "/assets/Lux4.jpg",
-        "/assets/Lux5.jpg",
-        "/assets/Lux6.jpg",
-
-      ],
-      tags: ["Brand Identity Design", "Logo Design","Visual Identity Systems"],
+        "Developed a modern e-commerce website for a beauty and salon equipment brand, focused on showcasing and selling professional furniture and accessories for salons, barbershops, manicure, pedicure, and massage services. The project emphasizes a clean and user-friendly interface, clear product presentation, and smooth navigation across categories. Special attention was given to visual hierarchy, responsive layout, and conversion-oriented UI elements such as product cards, call-to-action buttons, and promotional sections.",
+      cover: "/assets/asu.jpg",
+      images: ["/assets/as1.jpg", "/assets/as2.jpg", "/assets/as.jpg"],
+      tags: ["Full-Stack", "React.js", "Node.js", "Teamwork", "E-commerce"],
+      github: "https://github.com/LIL19-IT",
     },
     {
       id: 3,
-      title: "Motoshop Website",
+      title: "Car Automotive Showcase Website",
       shortDescription: "UI/UX Design",
       fullDescription:
-        "Motoshop Armenia — Website Design Project \n\nI collaborated with the Codritive team on the design and development of the Motoshop Armenia website.\n\nMy role in the project was UI/UX Designer. I focused on understanding the client’s business goals and user needs, conducting UX research, analyzing user behavior, and reviewing competitor solutions to create the most effective design possible.\n\nThroughout the design process, I prioritized: creating an intuitive and user-friendly experience delivering a clean, modern, and visually appealing interface aligning design decisions with business and conversion goals My objective was to deliver a high-quality, user-centered design that meets client expectations and adds real value to the product.",
-      cover: "/assets/Mot.jpg",
-      images: [
-        "/assets/mot1.jpg",
-        "/assets/mot2.jpg",
-        "/assets/mot3.jpg",
-        "/assets/mot4.jpg",
-        "/assets/mot5.jpg",
-        "/assets/mot6.jpg",
-        "/assets/mot7.jpg",
-        "/assets/mot8.jpg",
-        "/assets/mot9.jpg",
-        "/assets/mot10.jpg",
-      ],
-      tags: ["UI/UX Design", "Research","Layout & Grid Systems"],
+        "Developed a modern automotive showcase website focused on presenting featured cars with detailed visuals, pricing, and descriptions. The project emphasizes a dark, premium UI design to highlight luxury and performance vehicles while maintaining clear structure and smooth user experience. The website includes a featured cars section with interactive cards, visual focus on key models, and a dedicated “Get in Touch” section to encourage user engagement and communication. Special attention was given to visual hierarchy, responsiveness, and brand-oriented styling.",
+      cover: "/assets/he1.jpg",
+      images: ["/assets/he2.jpg", "/assets/he1.jpg"],
+      tags: ["Frontend", "UI/UX"],
+      github: "https://github.com/LIL19-IT",
     },
-{
+    {
       id: 4,
-      title: "BLOK BARBERSHOP",
-      shortDescription: "BRANDING",
+      title: "Flower Shop Website",
+      shortDescription: "Full-Stack development",
       fullDescription:
-        "BLOK Barbershop Branding — Visual Identity & Brand Design \n\nBLOK Barbershop Branding is a comprehensive visual identity project created to define a strong, contemporary brand presence for a modern barbershop concept. This project focuses on translating the brand’s personality — bold, refined, and approachable — into a cohesive design language that resonates with both urban culture and professional craftsmanship.\n\nThe process began with research into competitive and cultural context to understand what makes a barbershop brand stand out. Based on this insight, a distinctive logo was developed that combines geometric structure with sharp, confident aesthetics, reflecting precision and style.\n\nThe branding system expands beyond the logo to include a consistent use of typography, color palette, and supporting graphic elements that reinforce the brand’s character across all touchpoints — from signage and business cards to packaging and digital assets.\n\nBy maintaining visual harmony and purposeful contrast, this branding enhances both the user’s perception and emotional connection to the brand. BLOK Barbershop Branding demonstrates a strategic approach to visual storytelling and identity design that is both memorable and adaptable to real-world applications.",
-      cover: "/assets/Black.jpg",
-      images: [
-        "/assets/blo.jpg",
-        "/assets/blo1.jpg",
-        "/assets/blo2.jpg",
-        "/assets/blo3.jpg",
-        "/assets/blo4.jpg",
-        "/assets/blo5.jpg",
-       
-      ],
-      tags: ["Brand Identity Design", "Logo Design","Graphic Design"],
+        "Developed a modern and visually appealing e-commerce website for a flower shop, focused on showcasing fresh floral products and creating an emotional, user-friendly shopping experience. The design emphasizes soft colors, clean layouts, and strong visual hierarchy to highlight product collections and promotions. The website includes a featured products section with discounts, a visually engaging hero banner, an about section to communicate brand values, and clear calls-to-action to drive conversions.",
+      cover: "/assets/fl2.jpg",
+      images: ["/assets/fl1.jpg", "/assets/fl2.jpg", "/assets/fl.jpg"],
+      tags: ["Frontend", "Backend", "Database"],
+      github: "https://github.com/LIL19-IT",
     },
-{
+    {
       id: 5,
-      title: "Book Cover Design",
+      title: "Food Categories Website",
       shortDescription: "Creative Cover & Visual Identity",
       fullDescription:
-        "Book Cover Design Creative Cover & Visual Identity\n\n packaging and digital assets.\n\nThis Book Cover Design project explores visual storytelling through thoughtful typographic choices, imagery, and composition that encapsulate the essence of the book’s subject matter. The goal was to craft a cover that not only attracts attention but also conveys the tone, mood, and thematic elements of the content in a visually compelling way.\n\nThe process began with analyzing the book’s core message and target audience, identifying key visual metaphors, and developing creative concepts that reflect both the narrative and emotional context. Through iterative sketching and design refinement, a distinctive visual language was established using harmonious color palettes, balanced typography, and striking visual hierarchy.\n\nThe process began with analyzing the book’s core message and target audience, identifying key visual metaphors, and developing creative concepts that reflect both the narrative and emotional context. Through iterative sketching and design refinement, a distinctive visual language was established using harmonious color palettes, balanced typography, and striking visual hierarchy.",
-      cover: "/assets/Book.jpg",
-      images: [
-        "/assets/b1.jpg",
-        "/assets/b2.jpg",
-        "/assets/b3.jpg",
-        "/assets/b4.jpg",
-        
-       
-      ],
-      tags: ["Book Cover & Layout Design", "Typography","Visual Composition"],
-    },
-{
-      id: 6,
-      title: "Modern Simplicity",
-      shortDescription: "Minimalist Design Exploration",
-      fullDescription:
-        "Modern Simplicity — Minimalist Design Exploration\n\nModern Simplicity is a creative design project rooted in the philosophy of minimalist aesthetics, where clarity and purpose drive every visual decision. This project focuses on stripping away the unnecessary to highlight essential elements, resulting in a visual language that is clean, balanced, and timeless.\n\nModern Simplicity is a creative design project rooted in the philosophy of minimalist aesthetics, where clarity and purpose drive every visual decision. This project focuses on stripping away the unnecessary to highlight essential elements, resulting in a visual language that is clean, balanced, and timeless.\n\nThe design process began with a deep understanding of the project’s intent — to communicate ideas without distraction. By carefully considering composition, whitespace, typography, and color, a cohesive style emerged that balances simplicity with distinctive personality. Each element was thoughtfully placed to create harmony and enhance visual clarity, ensuring that every design piece feels intentional and refined.\n\nThis work highlights the power of minimal design: how thoughtful use of space, structure, and subtle details can deliver impactful visual communication without visual clutter. Modern Simplicity showcases the ability to use simplicity not as a limitation but as a strength — creating designs that are elegant, functional, and memorable.",
-      cover: "/assets/sun.jpg",
-      images: [
-        "/assets/sun0.jpg",
-        "/assets/sun1.jpg",
-        "/assets/sun2.jpg",
-        "/assets/sun3.jpg",
-                "/assets/sun4.jpg",
-
-        
-       
-      ],
-      tags: ["Minimalist Visual Design", "Typography ","Composition & Layout"],
-    },
-
-
-    {
-      id: 7,
-      title: "Ma Jolie” Gin Packaging Design",
-      shortDescription: "Brand & Packaging Concept",
-      fullDescription:
-        "“Ma Jolie” Gin Packaging Design — Brand & Packaging Concept\n\n“Ma Jolie” Gin Packaging Design — Brand & Packaging Concept\n\n“Ma Jolie” Gin Packaging Design is a creative branding and packaging project developed to craft a striking and refined visual identity for a premium gin product. The concept focuses on designing a packaging system that reflects the sophistication and artisanal quality of the spirit while ensuring strong shelf presence and visual impact.\n\nThis project highlights skills in brand identity development, visual hierarchy, label design, and packaging execution — showcasing how design can elevate product perception and contribute to brand storytelling.",
-      cover: "/assets/jol.jpg",
-      images: [
-        "/assets/jol1.jpg",
-        "/assets/jol2.jpg",
-        "/assets/jol3.jpg",
-        "/assets/jol4.jpg",
-                "/assets/jol5.jpg",
-        "/assets/jol6.jpg",
-
-        
-       
-      ],
-      tags: ["Brand Identity Design", " Label Design","Product Visual Identity"],
-    },
-
-
-    {
-      id: 8,
-      title: "Poster Design",
-      shortDescription: "Project Description (Professional, English)",
-      fullDescription:
-        "Poster Design — Project Description (Professional, English)\n\nThis Poster Design project explores the art of visual communication through striking, meaningful layout and graphic expression. Posters are a foundational graphic design medium that combines typography, imagery, color, and composition to deliver a clear message in a single glance, capturing attention and conveying ideas instantly.\n\nThis Poster Design project explores the art of visual communication through striking, meaningful layout and graphic expression. Posters are a foundational graphic design medium that combines typography, imagery, color, and composition to deliver a clear message in a single glance, capturing attention and conveying ideas instantly.\n\nIn this project, I focused on distilling complex information and creative concepts into bold visual elements, balancing hierarchy and whitespace to guide the viewer’s eye and enhance readability. The design process involved careful consideration of type scale, visual contrast, color harmony, and symbolic imagery to craft posters that are not only visually compelling but also conceptually strong.",
-      cover: "/assets/pos.jpg",
-      images: [
-        "/assets/pos1.jpg",
-        "/assets/pos2.jpg",
-        "/assets/pos3.jpg",
-        "/assets/pos4.jpg",
-      
-
-        
-       
-      ],
-      tags: ["Graphic Design", "Visual Communication","Typography & Hierarchy"],
+        "Developed a dynamic web application for browsing meals by categories, allowing users to explore food items such as desserts, beef, and chicken in an intuitive and visually engaging layout. The project focuses on category-based navigation, search functionality, and clear presentation of meal details. The application includes a category search feature, detailed food cards with images and descriptions, and smooth navigation between categories. Emphasis was placed on usability, responsive design, and clean UI to ensure a seamless user experience.",
+      cover: "/assets/bs2.jpg",
+      images: ["/assets/bs.jpg", "/assets/bs2.jpg"],
+      tags: ["Frontend", "Backend"],
+      github: "https://github.com/LIL19-IT",
     },
   ];
 
-  /* SPLIT PROJECTS */
   const featuredProjects = projects.slice(0, 2);
   const otherProjects = projects.slice(2);
 
@@ -222,7 +117,7 @@ const ProjectsSection = () => {
           </h2>
         </motion.div>
 
-        {/* FIRST ROW — 2 CARDS */}
+        {/* FIRST ROW */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mb-28">
           {featuredProjects.map((project, index) => (
             <ProjectCard
@@ -235,7 +130,7 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* SECOND ROW — 3 CARDS */}
+        {/* SECOND ROW */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
           {otherProjects.map((project, index) => (
             <ProjectCard
@@ -286,12 +181,24 @@ const ProjectCard = ({
     className="cursor-pointer group"
   >
     <div className="relative rounded-3xl overflow-hidden glass-card border border-border/40 group-hover:border-primary/60 transition-all">
-      <div className="h-[340px] overflow-hidden">
+
+      <div className="relative h-[340px] overflow-hidden">
         <img
           src={project.cover}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
+
+        {/* GITHUB */}
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="absolute top-4 right-4 p-2 rounded-full bg-black/60 backdrop-blur hover:bg-primary transition"
+        >
+          <Github className="w-5 h-5 text-white" />
+        </a>
       </div>
 
       <div className="p-8">
@@ -317,7 +224,7 @@ const ProjectCard = ({
   </motion.div>
 );
 
-/* ================= MODAL + AUTO CAROUSEL ================= */
+/* ================= MODAL ================= */
 
 const ProjectModal = ({
   project,
@@ -334,7 +241,6 @@ const ProjectModal = ({
       setDirection(1);
       setIndex((i) => (i + 1) % project.images.length);
     }, 3500);
-
     return () => clearInterval(timer);
   }, [project.images.length]);
 
@@ -379,15 +285,14 @@ const ProjectModal = ({
           {project.title}
         </h3>
 
-        <p className="text-muted-foreground mb-10 max-w-3xl whitespace-pre-line leading-relaxed">
+        <p className="text-muted-foreground mb-10 max-w-3xl leading-relaxed">
           {project.fullDescription}
         </p>
 
-        {/* CAROUSEL */}
         <div className="relative flex items-center justify-center">
           <button
             onClick={prev}
-            className="absolute left-4 z-20 p-3 rounded-full bg-black/40 backdrop-blur hover:scale-110 transition"
+            className="absolute left-4 z-20 p-3 rounded-full bg-black/40 backdrop-blur"
           >
             <ChevronLeft />
           </button>
@@ -402,45 +307,24 @@ const ProjectModal = ({
                   opacity: 0,
                   x: direction > 0 ? 140 : -140,
                   scale: 0.96,
-                  filter: "blur(6px)",
                 }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                  scale: 1,
-                  filter: "blur(0px)",
-                }}
+                animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{
                   opacity: 0,
                   x: direction > 0 ? -140 : 140,
                   scale: 0.96,
-                  filter: "blur(6px)",
                 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                transition={{ duration: 0.6 }}
               />
             </AnimatePresence>
           </div>
 
           <button
             onClick={next}
-            className="absolute right-4 z-20 p-3 rounded-full bg-black/40 backdrop-blur hover:scale-110 transition"
+            className="absolute right-4 z-20 p-3 rounded-full bg-black/40 backdrop-blur"
           >
             <ChevronRight />
           </button>
-        </div>
-
-        {/* DOTS */}
-        <div className="mt-6 flex justify-center gap-3">
-          {project.images.map((_, i) => (
-            <motion.span
-              key={i}
-              layout
-              className={`h-2.5 rounded-full ${
-                i === index ? "bg-primary w-8" : "bg-muted w-2.5"
-              }`}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            />
-          ))}
         </div>
       </motion.div>
     </motion.div>

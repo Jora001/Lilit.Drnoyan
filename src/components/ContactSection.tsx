@@ -7,8 +7,8 @@ import {
   Phone,
   Send,
   Linkedin,
+  Github,
 } from 'lucide-react';
-import { FaBehance } from 'react-icons/fa';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
@@ -35,14 +35,14 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'amalya.karapetyan001@gmail.com',
-      href: 'mailto:amalya.karapetyan001@gmail.com',
+      value: 'lilitdrnoyan30@gmail.com',
+      href: 'mailto:lilitdrnoyan30@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+374 96-28-75-75',
-      href: 'tel:+37496287575',
+      value: '+(374) 94-63-34-88',
+      href: 'tel:+37494633488',
     },
     {
       icon: MapPin,
@@ -54,14 +54,14 @@ const ContactSection = () => {
 
   const socialLinks = [
     {
-      icon: FaBehance,
-      label: 'Behance',
-      href: 'https://www.behance.net/amalyakarapet3',
+      icon: Github,
+      label: 'GitHub',
+      href: 'https://github.com/LIL19-IT',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/amalya-karapetyan-b01050284/',
+      href: 'https://www.linkedin.com/in/lilit-drnoyan-272a722b0/',
     },
   ];
 

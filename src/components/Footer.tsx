@@ -1,29 +1,46 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
-import { FaBehance } from 'react-icons/fa';
+import { Linkedin, Mail, Github } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: FaBehance, href: "https://www.behance.net/amalyakarapet3", label: "Behance" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/amalya-karapetyan-b01050284/", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:amalya.karapetyan001@gmail.com", label: "Email" },
+    {
+      icon: Github,
+      href: "https://github.com/LIL19-IT", // 🔁 փոխիր քո GitHub link-ով
+      label: "GitHub",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/lilit-drnoyan-272a722b0/",
+      label: "LinkedIn",
+    },
+    {
+      icon: Mail,
+      href: "mailto:lilitdrnoyan30@gmail.com",
+      label: "Email",
+    },
   ];
 
   return (
     <footer className="py-12 border-t border-border">
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+          {/* LEFT */}
           <div className="text-center md:text-left">
-            <a href="#" className="font-display font-bold text-xl inline-block mb-2">
+            <a
+              href="#"
+              className="font-display font-bold text-xl inline-block mb-2"
+            >
               <span className="gradient-text">&lt;Portfolio /&gt;</span>
             </a>
             <p className="text-sm text-muted-foreground">
-               {currentYear} Portfolio Amalya Karapetyan  UI/UX & Graphic Designer.
+              {currentYear} Portfolio Lilit Drnoyan — Full-Stack Developer
             </p>
           </div>
 
+          {/* SOCIAL ICONS */}
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
               <motion.a
@@ -40,9 +57,11 @@ const Footer = () => {
             ))}
           </div>
 
+          {/* RIGHT */}
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            © 2025 J.H. All rights reserved.
+            © {currentYear} J.H. All rights reserved.
           </p>
+
         </div>
       </div>
     </footer>
