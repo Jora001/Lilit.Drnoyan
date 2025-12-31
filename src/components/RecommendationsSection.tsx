@@ -6,15 +6,9 @@ const AUTO_INTERVAL = 5000;
 
 const RecommendationsSection = () => {
   const recommendations = [
-     {
-      text: "As the Graphic Design Level Up Course coach at BOG, I am writing to confirm that Amalya Karapetyan attended my course on 29/07/2024 - 25/10/2024 During the course, they demonstrated exceptional responsibility and outstanding results and graduated with a certificate of excellence. I assure thatAmalya Karapetyan has mastered the basic know ledge and skills of the profession and is ready to start their career in the field.",
-      author: "Shushan Tonoyan",
-      role: "Coach",
-      company: "Business Development Group",
-      avatar: "/assets/bbdg.jpg",
-    },
+ 
     {
-      text: "I am delighted to write a recommendation for our amazing UI/UX Designer, Amalya. Working with Amalya is truly productive. She is not only a talented UI/UX Designer but also highly dedicated, intelligent, and creative. Her approach to any project is always responsible and meticulous—she pays attention to every detail, achieving outstanding results. Beyond her professional qualities, she stands out for her human approach as well. She brings positive energy to the team, is easy to communicate with, and is always ready to provide support. Amalya is one of those professionals whose collaboration is not only effective but also enjoyable and inspiring.",
+      text:  "I am thrilled to write a recommendation for Lilit, an exceptional Full Stack Developer. Working with Lilit has been an absolute pleasure—she is incredibly hardworking, dedicated, and highly skilled across both front-end and back-end development. Her attention to detail, problem-solving abilities, and commitment to delivering high-quality work are truly impressive. Beyond her technical expertise, Lilit stands out for her human qualities—she is approachable, supportive, and brings a positive energy to any team. She is an excellent team player, communicates effectively, and inspires those around her. I am confident that Lilit will achieve remarkable success in her career, and any team would be lucky to collaborate with her.",
       author: "Jora Hovsepyan",
       role: "Software Engineer",
       company: "SynapTech Agency",
