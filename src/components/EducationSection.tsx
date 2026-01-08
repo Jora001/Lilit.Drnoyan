@@ -10,7 +10,6 @@ import {
   Award,
 } from "lucide-react";
 
-/* ================= ANIMATION VARIANTS ================= */
 
 const fadeUp: Variants = {
   hidden: {
@@ -27,7 +26,6 @@ const fadeUp: Variants = {
   },
 };
 
-/* ================= COMPONENT ================= */
 
 const EducationSection = () => {
   const ref = useRef<HTMLElement | null>(null);
@@ -87,7 +85,6 @@ const EducationSection = () => {
 
   return (
     <section id="education" ref={ref} className="relative py-40 overflow-hidden">
-      {/* 🌌 BACKGROUND LIGHT ORBS */}
       <motion.div className="absolute inset-0 pointer-events-none">
         <motion.div
           animate={{ x: [0, 120, 0], y: [0, -80, 0] }}
@@ -101,7 +98,6 @@ const EducationSection = () => {
         />
       </motion.div>
 
-      {/* DOT PATTERN */}
       <div className="absolute inset-0 opacity-5">
         <div
           className="w-full h-full"
@@ -114,7 +110,6 @@ const EducationSection = () => {
       </div>
 
       <div className="section-container relative z-10">
-        {/* HEADER */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -127,7 +122,6 @@ const EducationSection = () => {
           </h2>
         </motion.div>
 
-        {/* EDUCATION TIMELINE */}
         <div className="space-y-20">
           {education.map((edu, index) => (
             <motion.div
@@ -137,7 +131,6 @@ const EducationSection = () => {
               transition={{ duration: 1, delay: index * 0.15 }}
               className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-14 items-center`}
             >
-              {/* IMAGE */}
               <motion.div whileHover={{ scale: 1.04 }} className="w-full lg:w-2/5 relative group">
                 <div className="absolute -inset-3 opacity-0 group-hover:opacity-100 transition duration-500 rounded-3xl bg-gradient-to-r from-primary/30 to-fuchsia-500/20 blur-2xl" />
                 <div className="relative rounded-3xl overflow-hidden">
@@ -146,7 +139,6 @@ const EducationSection = () => {
                 </div>
               </motion.div>
 
-              {/* CONTENT */}
               <motion.div whileHover={{ y: -6 }} className="w-full lg:w-3/5 glass-card p-10 rounded-3xl relative overflow-hidden">
                 <div className="absolute inset-0 opacity-0 hover:opacity-100 transition duration-500 bg-gradient-to-br from-primary/10 to-transparent" />
 

@@ -7,7 +7,6 @@ import {
 import type { Variants } from "framer-motion";
 import { useRef } from "react";
 
-/* ================= VARIANTS ================= */
 
 const containerVariants: Variants = {
   hidden: {},
@@ -31,7 +30,6 @@ const itemVariants: Variants = {
   show: { opacity: 1, x: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
 };
 
-/* ================= SECTION ================= */
 
 const SkillsSection = () => {
   const ref = useRef<HTMLElement | null>(null);
@@ -66,7 +64,6 @@ const SkillsSection = () => {
 
   return (
     <section id="skills" ref={ref} className="relative py-44 overflow-hidden">
-      {/* ===== GLOBAL LIGHT ORBS ===== */}
       <motion.div className="absolute inset-0 pointer-events-none">
         <motion.div
           animate={{ x: [0, 120, 0], y: [0, -80, 0] }}
@@ -81,7 +78,6 @@ const SkillsSection = () => {
       </motion.div>
 
       <div className="section-container relative z-10">
-        {/* ===== HEADER ===== */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -94,7 +90,6 @@ const SkillsSection = () => {
           </h2>
         </motion.div>
 
-        {/* ===== CARDS ===== */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -112,7 +107,6 @@ const SkillsSection = () => {
 
 export default SkillsSection;
 
-/* ================= LIGHT CARD ================= */
 
 const LightCard = ({ title, items }: { title: string; items: string[] }) => {
   const mouseX = useMotionValue(0);
@@ -138,20 +132,17 @@ const LightCard = ({ title, items }: { title: string; items: string[] }) => {
       transition={{ duration: 0.45 }}
       className="relative overflow-hidden rounded-3xl glass-card p-10 min-h-[380px]"
     >
-      {/* ===== MOUSE LIGHT ===== */}
       <motion.div
         style={{ background: glow }}
         className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
       />
 
-      {/* ===== ANIMATED LIGHT SWEEP ===== */}
       <motion.div
         animate={{ x: ["-120%", "120%"] }}
         transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
         className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent rotate-12"
       />
 
-      {/* ===== BREATHING BORDER GLOW ===== */}
       <motion.div
         animate={{ opacity: [0.15, 0.35, 0.15] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

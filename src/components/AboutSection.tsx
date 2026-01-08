@@ -25,7 +25,6 @@ const AboutSection = () => {
 
   return (
     <section id="about" ref={ref} className="relative py-36 overflow-hidden">
-      {/* 🌈 Animated light background */}
       <div className="absolute inset-0 -z-10">
         <motion.div
           animate={{ x: [0, 80, 0], y: [0, -60, 0] }}
@@ -39,7 +38,6 @@ const AboutSection = () => {
         />
       </div>
 
-      {/* ✨ shimmer line */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
 
       <div className="section-container">
@@ -62,7 +60,6 @@ const AboutSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* 🖼 IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -86,7 +83,6 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
               </motion.div>
 
-              {/* 💡 ML Badge */}
               <motion.div
                 animate={{
                   boxShadow: [
@@ -107,7 +103,6 @@ Full-Stack                </div>
             </div>
           </motion.div>
 
-          {/* ✍ TEXT */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -123,7 +118,6 @@ I enjoy solving complex problems, writing clean and maintainable code, and worki
 I continuously develop my skills and strive to create applications that combine performance, usability, and long-term value for both users and businesses.
   </p>
 
-            {/* 🌟 HIGHLIGHTS */}
             <div className="grid sm:grid-cols-2 gap-6">
               {highlights.map((item, index) => (
                 <motion.div

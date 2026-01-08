@@ -11,7 +11,6 @@ import {
   Github,
 } from "lucide-react";
 
-/* ================= TYPES ================= */
 
 type Project = {
   id: number;
@@ -24,7 +23,6 @@ type Project = {
   github: string;
 };
 
-/* ================= MAIN SECTION ================= */
 
 const ProjectsSection = () => {
   const ref = useRef<HTMLElement | null>(null);
@@ -130,7 +128,6 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        {/* SECOND ROW */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
           {otherProjects.map((project, index) => (
             <ProjectCard
@@ -144,7 +141,6 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      {/* MODAL */}
       <AnimatePresence>
         {activeProject && (
           <ProjectModal
@@ -159,7 +155,6 @@ const ProjectsSection = () => {
 
 export default ProjectsSection;
 
-/* ================= PROJECT CARD ================= */
 
 const ProjectCard = ({
   project,
@@ -189,7 +184,6 @@ const ProjectCard = ({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        {/* GITHUB */}
         <a
           href={project.github}
           target="_blank"
@@ -224,7 +218,6 @@ const ProjectCard = ({
   </motion.div>
 );
 
-/* ================= MODAL ================= */
 
 const ProjectModal = ({
   project,
