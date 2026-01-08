@@ -2,7 +2,6 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-/* ==================== CERTIFICATIONS CAROUSEL ==================== */
 const AUTO_INTERVAL = 4500;
 
 const CertificationsCarousel = () => {
@@ -123,7 +122,6 @@ const CertificationsCarousel = () => {
   );
 };
 
-/* ==================== PHOTO ALBUM CAROUSEL ==================== */
 const PhotoAlbumSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "0px" });
@@ -233,7 +231,6 @@ const PhotoAlbumSection = () => {
   );
 };
 
-/* ==================== EXPORT ==================== */
 export default function PortfolioSections() {
   return (
     <>

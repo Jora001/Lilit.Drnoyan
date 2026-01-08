@@ -16,7 +16,6 @@ const HeroSection = () => {
         lg:pt-32
       "
     >
-      {/* Background grid */}
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -26,14 +25,12 @@ const HeroSection = () => {
         }}
       />
 
-      {/* Glowing blobs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
 
       <div className="section-container relative z-10 w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-24">
 
-          {/* LEFT */}
           <motion.div
             className="flex-1 text-center lg:text-left"
             initial={{ opacity: 0, y: 40 }}
@@ -96,7 +93,6 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* RIGHT – INTERACTIVE DEV SHOWCASE */}
           <motion.div
             className="flex-1 w-full flex items-center justify-center"
             initial={{ opacity: 0, y: 40 }}
@@ -105,7 +101,6 @@ const HeroSection = () => {
           >
             <div className="relative w-full max-w-md lg:max-w-lg">
 
-              {/* Code card */}
               <div className="glass-card p-6 rounded-2xl font-mono text-sm sm:text-base leading-relaxed shadow-xl">
                 <p>
                   <span className="text-primary">const</span>{" "}
@@ -131,7 +126,6 @@ const HeroSection = () => {
                 <p>{"};"}</p>
               </div>
 
-              {/* Floating badges */}
               <motion.div
                 className="absolute -top-6 -left-6 glass-card px-4 py-2 rounded-lg text-sm font-semibold"
                 animate={{ y: [0, -12, 0] }}
@@ -159,7 +153,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground">
           <ArrowDown className="w-5 h-5 animate-bounce" />
         </div>
